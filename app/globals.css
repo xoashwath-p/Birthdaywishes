@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-pink: #f472b6;
+  --soft-pink: #fff0f5;
+  --rose-gold: #e0a96d;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom romantic scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fdf2f8;
+}
+::-webkit-scrollbar-thumb {
+  background: #fbcfe8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f472b6;
+}
+
+/* Polaroid Photo Styling */
+.polaroid-frame {
+  background: #ffffff;
+  padding: 12px 12px 38px 12px;
+  box-shadow: 0 10px 25px -5px rgba(244, 114, 182, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.polaroid-frame:hover {
+  transform: translateY(-8px) scale(1.03) !important;
+  box-shadow: 0 20px 35px -5px rgba(244, 114, 182, 0.4), 0 10px 15px -5px rgba(0, 0, 0, 0.08);
+  z-index: 20;
+}
+
+/* Washi Tape Effect */
+.washi-tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  width: 90px;
+  height: 24px;
+  background-color: rgba(254, 205, 211, 0.85);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 2px dashed rgba(244, 114, 182, 0.5);
+  border-right: 2px dashed rgba(244, 114, 182, 0.5);
+  z-index: 10;
+}
+
+.washi-tape-corner-left {
+  position: absolute;
+  top: -8px;
+  left: -12px;
+  transform: rotate(-35deg);
+  width: 60px;
+  height: 20px;
+  background-color: rgba(253, 224, 71, 0.55);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.washi-tape-corner-right {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  transform: rotate(35deg);
+  width: 60px;
+  height: 20px;
+  background-color: rgba(244, 114, 182, 0.55);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/* Candle Flame Animation */
+.flame {
+  width: 12px;
+  height: 22px;
+  background: radial-gradient(ellipse at bottom, #fff 0%, #ffdf7e 25%, #ff9800 60%, #ff5722 90%);
+  border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px 4px rgba(255, 179, 71, 0.8), 0 0 25px 8px rgba(255, 107, 107, 0.4);
+  animation: flicker 1.2s infinite alternate ease-in-out;
+  transform-origin: 50% 90%;
+}
+
+@keyframes flicker {
+  0% {
+    transform: translateX(-50%) scale(1) rotate(-1deg);
+    opacity: 0.95;
+  }
+  25% {
+    transform: translateX(-50%) scale(1.05, 0.95) rotate(2deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) scale(0.95, 1.05) rotate(-2deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateX(-50%) scale(1.02, 0.98) rotate(1deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) scale(0.98, 1.02) rotate(-1deg);
+    opacity: 0.95;
+  }
+}
+
+/* Smoke puff animation when candles are extinguished */
+@keyframes smoke {
+  0% {
+    opacity: 0.8;
+    transform: translateY(0) scale(0.8);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translateY(-20px) scale(1.4) rotate(10deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(2) rotate(-15deg);
+  }
+}
+
+.smoke-puff {
+  animation: smoke 1.5s forwards ease-out;
+}
+
+/* Envelope 3D Fold & Unfold */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.envelope-flap {
+  transform-origin: top;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.envelope-open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+/* Letter Texture */
+.letter-paper {
+  background-color: #fffdfa;
+  background-image: radial-gradient(#fce7f3 1px, transparent 1px);
+  background-size: 20px 20px;
+  box-shadow: 0 15px 35px -5px rgba(244, 114, 182, 0.2), 0 0 0 1px rgba(251, 113, 133, 0.1);
+}
+
+/* Glowing Sparkles */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 2s infinite ease-in-out;
+}
