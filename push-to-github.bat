@@ -1,7 +1,7 @@
 @echo off
 title Push Deepzz Birthday Surprise to GitHub
 echo ========================================================
-echo   Pushing to https://github.com/ashwathprakash26-sys/Birthdaywishes.git ...
+echo   Pushing to https://github.com/xoashwath-p/Birthdaywishes.git ...
 echo ========================================================
 echo.
 set "PATH=%LOCALAPPDATA%\Microsoft\WinGet\Packages\Git.MinGit_Microsoft.Winget.Source_8wekyb3d8bbwe\cmd;%PATH%"
